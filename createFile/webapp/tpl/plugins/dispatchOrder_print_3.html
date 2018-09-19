@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+	<link href='/assets/stylesheets/plugins/datatables/bootstrap-datatable.css' media='all' rel='stylesheet' type='text/css' />
+	<link href="/assets/stylesheets/dqq.css" rel="stylesheet">
+	<link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet">
+	<script>
+		var _page="dispatchOrder_print_3";
+		var _pageType=2;
+	</script>
+</head>
+<body class="inner_body" id="all_date">
+	<div class="wrapper-content print_page">
+		<table width="100%">
+			<tr align="center" >
+				<td>
+					<b>运费交付结算&nbsp;&nbsp;制单时间:<span class="jsqdTime"></span></b>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="pull-left">
+						<b>日期：</b>
+						<span style="text-decoration:underline;" id="startDate" ></span>至
+						<span style="text-decoration:underline;" id="sendDate" ></span>
+					</div>
+					<div  class="pull-right">
+						<b>操作员：</b><span style="text-decoration:underline;" id="frealName" ></span>
+					</div>
+
+				</td>
+			</tr>
+		</table>
+		<table class="data-table tb_list_01" width="100%" id="print_mingxi">
+			<thead>
+				<tr class="title">
+					<th colspan="100">交付运费结算明细</th>
+				</tr>
+				<tr>
+					<th>序号</th>
+					<th>运单号</th>
+					<th>收货网点</th>
+					<th>发货人</th>
+					<th>件数</th>
+					<th>交付</th>
+					<th>保值费</th>
+					<th>运费</th>
+					<th>送货费</th>
+					<th>发货时间</th>
+					<th>所属网点</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+		<hr class="hr_01" />
+		<table class="data-table tb_list_01" width="100%" id="temptotal_wrap">
+			<thead>
+			<tr>
+				<th></th>
+				<th class="ps">票数</th>
+				<th class="js">件数</th>
+				<th class="tf"><span class="fpayName2">提付</span></th>
+				<th class="jf"><span class="fpayName1">交付</span></th>
+				<th class="hth"><span class="fpayName3">合同户</span></th>
+				<th class="bzf">保值费</th>
+				<th class="yfhj">运费合计</th>
+				<th class="zjf">转接费</th>
+				<th class="shf">送货费</th>
+				<th class="zzfy">中转费用</th>
+			</tr>
+			</thead>
+			<tbody id="">
+			<tr class="zhongzhuan" style="display: none">
+				<td style="min-width:30px; text-align:center;">中转</td>
+				<td style="min-width:80px;" class="piaoshu"></td>
+				<td style="min-width:80px;" class="jianshu"></td>
+				<td style="min-width:120px;" class="tifu"></td>
+				<td style="min-width:70px;" class="jiaofu"></td>
+				<td style="min-width:76px;" class="hetong"></td>
+				<td style="min-width:120px;" class="baozhifei"></td>
+				<td style="min-width:120px;" class="heji"></td>
+				<td style="min-width:120px;" class="jiehuofei"></td>
+				<td style="min-width:120px;" class="songhuofei"></td>
+				<td style="min-width:120px;" class="zhongzhuanfeiyong"></td>
+			</tr>
+			<tr class="zhengcheng" style="display: none">
+				<td style="text-align:center;">正程</td>
+				<td class="piaoshu"></td>
+				<td class="jianshu"></td>
+				<td class="tifu"></td>
+				<td class="jiaofu"></td>
+				<td class="hetong"></td>
+				<td class="baozhifei"></td>
+				<td class="heji"></td>
+				<td class="jiehuofei"></td>
+				<td class="songhuofei"></td>
+				<td class="zhongzhuanfeiyong"></td>
+			</tr>
+			<tr class="fancheng" style="display: none">
+				<td style="min-width:30px; text-align:center;">返程</td>
+				<td class="piaoshu"></td>
+				<td class="jianshu"></td>
+				<td class="tifu"></td>
+				<td class="jiaofu"></td>
+				<td class="hetong"></td>
+				<td class="baozhifei"></td>
+				<td class="heji"></td>
+				<td class="jiehuofei"></td>
+				<td class="songhuofei"></td>
+				<td class="zhongzhuanfeiyong"></td>
+			</tr>
+			<tr class="all">
+				<td style="min-width:30px; text-align:center;">合计</td>
+				<td class="piaoshu"></td>
+				<td class="jianshu"></td>
+				<td class="tifu"></td>
+				<td class="jiaofu"></td>
+				<td class="hetong"></td>
+				<td class="baozhifei"></td>
+				<td class="heji"></td>
+				<td class="jiehuofei"></td>
+				<td class="songhuofei"></td>
+				<td class="zhongzhuanfeiyong"></td>
+			</tr>
+			</tbody>
+		</table>
+		<table width="100%">
+			<!--<tr>-->
+				<!--<td align="center" class="td_info_02">-->
+
+					<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+					<!--<b>制单网点：</b><span style="text-decoration:underline;" id="fsiteName" ></span>-->
+				<!--</td>-->
+			<!--</tr>-->
+			<tr>
+				<td align="center" class="td_info_02">
+						<b>交款人：</b><input type="text" class="" style="width: 10%">
+				</td>
+			</tr>
+			<tr>
+				<td align="center" class="td_info_02 p_hidden">
+					<input type="button" class="p_btn_01" value="打印设置" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" class="p_btn_01" id="dc" value="导出Excel" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" class="p_btn_01" value="打印" onclick="window.print();" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" class="p_btn_01" value="关闭" onclick="closePrint();" />
+				</td>
+			</tr>
+		</table>
+	</div>
+	<script src='/assets/javascripts/jquery/jquery.min.js' type='text/javascript'></script>
+	<script src='/assets/javascripts/bootstrap/bootstrap.min.js' type='text/javascript'></script>
+	<script src="/assets/javascripts/plugins/validate/jquery.validate.min.js"></script>
+	<script src='/assets/javascripts/plugins/validate/additional-methods.js' type='text/javascript'></script>
+	<script src='/assets/javascripts/plugins/datatables/jquery.dataTables.min.js' type='text/javascript'></script>
+	<script src='/assets/javascripts/plugins/datatables/jquery.dataTables.columnFilter.js' type='text/javascript'></script>
+	<script src="/assets/javascripts/dqq_include.js" type="text/javascript"></script>
+	<script src="/assets/javascripts/api/plugins/dispatchOrder_03.js" type="text/javascript"></script>
+	<script src="/assets/javascripts/dqq_page_public.js"></script>
+	<script src="/assets/javascripts/dqq_function.js"></script>
+</body>
+</html>

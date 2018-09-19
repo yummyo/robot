@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <link href='/assets/stylesheets/bootstrap/bootstrap.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='/assets/stylesheets/bootstrap/bootstrap-responsive.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='/assets/stylesheets/jquery_ui/jquery-ui-1.10.0.custom.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='/assets/stylesheets/jquery_ui/jquery.ui.1.10.0.ie.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='/assets/stylesheets/light-theme.css' id='color-settings-body-color' media='all' rel='stylesheet' type='text/css' />
+    <link href="/assets/stylesheets/font-awesome.min.css?v=4.3.0" rel="stylesheet">
+	<link href="/assets/stylesheets/dqq.css" rel="stylesheet">
+	<script>
+		var _page="orderDetai_1";
+	</script>
+</head>
+<body class="inner_body">
+	<div class="wrapper-content">
+		<section>
+			<table class="table_detail_02 blue">
+				<thead>
+					<tr>
+						<td colspan="6">运单基本信息</td>
+					</tr>
+				</thead>
+				<tr>
+					<th>运单编号</th>
+					<td id="fdispatchOrderNo"></td>
+					<th>发货站点</th>
+					<td id="fdispatchOrderNo"></td>
+					<th>收货站点</th>
+					<td id="freceiveSiteName"></td>
+				</tr>
+				<tr>
+					<th>是否回单</th>
+					<td id="fisRequiredReceipt"></td>
+					<th>运单状态</th>
+					<td id="fdispatchOrderStatus "></td>
+					<th>理赔状态</th>
+					<td id="fclaimsStatus"></td>
+				</tr>
+				<tr>
+					<th>挂失状态</th>
+					<td id="flostStatus"></td>
+					<th>异常状态</th>
+					<td id="funusualStatus"></td>
+					<th>接收状态</th>
+					<td id="freceiveStatus"></td>
+				</tr>
+				<tr>
+					<th>费用状态</th>
+					<td id="ffeeStatus"></td>
+					<th>代收货款状态</th>
+					<td id="fcodstatus" colspan="3"></td>
+				</tr>
+				<tr>
+					<th>备注信息</th>
+					<td id="fremark" colspan="5"></td>
+				</tr>
+			</table>
+
+			<table class="table_detail_02 green">
+				<thead>
+					<tr>
+						<td colspan="6">发货人收货人</td>
+					</tr>
+				</thead>
+				<tr>
+					<th>发货人</th>
+					<td id="fsender"></td>
+					<th>账户编号</th>
+					<td id="fsenderNo"></td>
+					<th>万里会员卡号码</th>
+					<td id="fmemberCardNo"></td>
+				</tr>
+				<tr>
+					<th>发货人电话</th>
+					<td id="fsenderTel"></td>
+					<th>发货人手机</th>
+					<td id="fsenderMobile"></td>
+					<th>发货人证件类型</th>
+					<td id="fsenderCardType"></td>
+				</tr>
+				<tr>
+					<th>发货人证件号码</th>
+					<td id="fsenderIdcardNo" colspan="5"></td>
+				</tr>
+				<tr>
+					<th>收货人</th>
+					<td id="freceiverName"></td>
+					<th>收货人电话</th>
+					<td id="freceiverTel"></td>
+					<th>收货人手机</th>
+					<td id="freceiverMobile"></td>
+				</tr>
+				<tr>
+					<th>收货人证件类型</th>
+					<td id="freceiverCardType"></td>
+					<th>收货人证件号码</th>
+					<td id="freceiverIdcardNo" colspan="3"></td>
+				</tr>
+			</table>
+
+			<table class="table_detail_02 orange">
+				<thead>
+					<tr>
+						<td colspan="6">费用信息</td>
+					</tr>
+				</thead>
+				<tr>
+					<th>付款方式</th>
+					<td id="fpayType"></td>
+					<th>总费用</th>
+					<td id="ftotalFee" class="f_red"></td>
+					<th>运费</th>
+					<td id="fcarriage"></td>
+				</tr>
+				<tr>
+					<th>保值费</th>
+					<td id="fmaintenanceFee"></td>
+					<th>保值金额</th>
+					<td id="fhedgeAmount"></td>
+					<th>送货费</th>
+					<td id="fdeliveryFee"></td>
+				</tr>
+				<tr>
+					<th>转接费</th>
+					<td id="fpickFee"></td>
+					<th>回单费</th>
+					<td id="freceiptFee"></td>
+					<th>中转费</th>
+					<td id="ftransferFee"></td>
+				</tr>
+			</table>
+
+			<table class="table_detail_02 dark-orange">
+				<thead>
+					<tr>
+						<td colspan="6">代收货款信息</td>
+					</tr>
+				</thead>
+				<tr>
+					<th>代收款</th>
+					<td id="fcodTotal"></td>
+					<th>代收款手续费</th>
+					<td id="fcodfee" colspan="3"></td>
+				</tr>
+				<tr>
+					<th>发货客户编号</th>
+					<td id="fcustomerNo"></td>
+					<th>发货人银行账户</th>
+					<td id="fsenderBankCardNo" colspan="3"></td>
+				</tr>
+			</table>
+
+			<table class="table_list_02 purple">
+				<thead>
+					<tr>
+						<td colspan="99">货物信息</td>
+					</tr>
+				</thead>
+				<tr>
+					<th>编号</th>
+					<th>名称</th>
+					<th>类型</th>
+					<th>件数</th>
+					<th>重量</th>
+					<th>体积</th>
+					<th>包装</th>
+					<th>长度</th>
+					<th>宽度</th>
+					<th>高度</th>
+					<th>状态</th>
+				</tr>
+				<tbody id="goods_wrap">
+					<td>编号</td>
+					<td>名称</td>
+					<td>类型</td>
+					<td>件数</td>
+					<td>重量</td>
+					<td>体积</td>
+					<td>包装</td>
+					<td>长度</td>
+					<td>宽度</td>
+					<td>高度</td>
+					<td>状态</td>
+				</tbody>
+			</table>
+		</section>
+	</div>
+	<script src='/assets/javascripts/jquery/jquery.min.js' type='text/javascript'></script>
+	<script src='/assets/javascripts/bootstrap/bootstrap.min.js' type='text/javascript'></script>
+	<script src="/assets/javascripts/plugins/validate/jquery.validate.min.js"></script>
+	<script src='/assets/javascripts/plugins/validate/additional-methods.js' type='text/javascript'></script>
+	<script src="/assets/javascripts/dqq_include.js" type="text/javascript"></script>
+	<script src="/assets/javascripts/api/plugins/order_detail.js" type="text/javascript"></script>
+	<script src="/assets/javascripts/dqq_page_public.js"></script>
+	<script src="/assets/javascripts/dqq_function.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+html,body{
+    height:100%;
+}
+.pull-right{
+    float: right;
+}
+.pull-left{
+    float: left;
+}
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+.text-left{
+    text-align: left;
+}
+/*顶部搜索框部分*/
+.weui-search-bar_focusing #searchBtn,.weui-search-bar_focusing #scanQRCode{
+    display: inline;
+}
+.weui-search-bar_focusing #searchBtn:after,.weui-search-bar_focusing #searchBar:after{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid rgba(0,0,0,.2);
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+#searchBtn,#scanQRCode{
+    display: none;
+    color: white;
+    white-space: nowrap;
+}
+.weui-search-bar{
+    position: relative;
+    padding: 8px 10px;
+    display: block;
+    box-sizing: border-box;
+    background-color: #efeff4;
+}
+.weui-search-bar__box{
+    margin-bottom:1rem;
+    background: white;
+}
+.weui-search-bar__form{
+    background:#efeff4;
+}
+.weui-search-bar__form:after{
+    background:#efeff4;
+}
+#userName{
+    display: none;
+}
+.weui-search-bar_focusing #userName{
+    display: block;
+}
+#scanQRCode{
+    color: #1aad19;
+}
+.submitDiv,#searchBar{
+    position: fixed;
+    left:0;
+    right:0;
+}
+.submitDiv{
+    bottom:0;
+}
+#searchBar{
+    top:0;
+}
+
+.table{
+    table-layout: fixed;
+    /*font-size: 10px;*/
+}
+.hide{
+    display: none;
+}
+th,td{
+    white-space:nowrap;
+    text-align: center;
+    padding:.5rem 0;
+}
+.weui-cell__hd{
+    text-align: center;
+}
+tr.active{
+    background: #fff8d7;
+}
+
+ul,li{
+    list-style: none;
+}
+.form-control{
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.form-control:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+.searchTime .weui-cell__bd{
+    text-align: center;
+}
+.h100{
+    height:100%;
+}

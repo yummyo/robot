@@ -1,0 +1,142 @@
+<table border="0" cellspacing="0" class="bill_table_01">
+	<thead>
+		<tr>
+			<th colspan="100">
+				<div class="address">
+					<h3>运单号:<span id="fdispatchOrderNo_text" class="f_red"></span></h3>
+					<!--总部地址：南三环与文治路交叉口向南3公里路西姚庄路（河南万里物流园）&nbsp;&nbsp;&nbsp;&nbsp;
+					业务咨询：0371-68295656 &nbsp;&nbsp;&nbsp;&nbsp;
+					货款查询：0371-68295888 &nbsp;&nbsp;&nbsp;&nbsp;
+					客服：0371-68295000 &nbsp;&nbsp;&nbsp;&nbsp;
+					传真：0371-60690907-->
+					<div id="orderNo_wrap" style="display:none;">
+						<button class="btn d_back" style="display:none;margin-bottom:15px;" onclick="history.go(-1);">
+							<i class="icon-arrow-left dqq_icon"></i>
+							返回
+						</button>
+					</div>
+				</div>
+			</th>
+		</tr>
+		<tr>
+			<td width="10%">配送时间：</td>
+			<td width="10%" id="fsendDate" class="r_01 filltext"></td>
+			<td width="14%">起站：</td>
+			<td width="22%" id='fsendSiteNo' class="r_01 filltext"></td>
+			<td width="12%">到达站：</td>
+			<td width="32%" colspan="2" id='freceiveSiteNo' class="r_01 filltext"></td>
+		</tr>
+
+		<tr>
+			<td>发货人</td>
+			<td colspan="2" id="fsenderName" class="r_01 filltext"></td>
+			<td width="12%">电&nbsp;&nbsp;话</td>
+			<td width="12%" id='fsenderMobile' class="r_01 filltext"></td>
+			<td width="22%" rowspan="1" colspan="2" id='freceiverStreetAddress' class="r_01 filltext" >
+
+			</td>
+
+		</tr>
+		<tr>
+			<td>收货人</td>
+			<td colspan="2" id='freceiverName' class="r_01 filltext"></td>
+			<td>电&nbsp;&nbsp;话</td>
+			<td id='freceiverMobile' class="r_01 filltext"></td>
+			<td width="22%" rowspan="2" colspan="2">
+				<dl class="memo">
+					<dt>备注：</dt>
+					<dd>
+						<textarea id="fremark" class="input-block-level filltext" rows="2" disabled></textarea>
+					</dd>
+					<div class="clear"></div>
+				</dl>
+				<div class="clear"></div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">货物名称</td>
+			<td>包&nbsp;&nbsp;装</td>
+			<td>数&nbsp;&nbsp;量</td>
+			<td>运费</td>
+		</tr>
+		<tr>
+			<input type='hidden' id="fgoodsFid_0" />
+			<td colspan="2" class="r_01 filltext" id="fgoodsName_0"></td>
+			<td class="r_01 filltext" id="fpacket_0"></td>
+			<td class="r_01 filltext" id="fgoodsNum_0"></td>
+			<td class="r_01 filltext" id="fgoodPrice_0"></td>
+			<td rowspan="2" colspan="2">
+				<ul class="memo">
+					<dt>付款方式：</dt>
+					<dd id="fpayType" class="filltext"></dd>
+					<div class="clear"></div>
+				</ul>
+				<div class="clear"></div>
+			</td>
+		</tr>
+		<tr>
+			<input type='hidden' id="fgoodsFid_1" />
+			<td colspan="2" class="r_01 filltext" id="fgoodsName_1"></td>
+			<td class="r_01 filltext" id="fpacket_1"></td>
+			<td class="r_01 filltext" id="fgoodsNum_1"></td>
+			<td class="r_01 filltext" id="fgoodPrice_1"></td>
+		</tr>
+		<tr>
+			<input type='hidden' id="fgoodsFid_2" />
+			<td colspan="2" class="r_01 filltext" id="fgoodsName_2"></td>
+			<td class="r_01 filltext" id="fpacket_2"></td>
+			<td class="r_01 filltext" id="fgoodsNum_2"></td>
+			<td class="r_01 filltext" id="fgoodPrice_2"></td>
+		</tr>
+		<tr>
+			<td colspan="2">合&nbsp;&nbsp;计</td>
+			<td></td>
+			<td class="f_red filltext" id="total_num"></td>
+			<td id="fcarriage" class="filltext"></td>
+			<td>代收货款卡号：</td>
+			<td class="r_01 filltext" id="fwlcardNo"></td>
+		</tr>
+		<tr>
+			<td>送货费</td>
+			<td class="r_01 filltext" id="fdeliveryFee"></td>
+			<td>转接费</td>
+			<td class="r_01 filltext" id="fpickFee"></td>
+			<td class="huidan">
+				回单：<span id="fisRequiredReceipt" class="filltext"></span>
+			</td>
+			<td>代收货款：</td>
+			<td>
+				<ul class="bt_01_widthText">
+					<li class="first">￥</li>
+					<li class="r_02 filltext" id="fcodTotal"></li>
+					<li class="last">元</li>
+				</ul>
+				<div class="clear"></div>
+			</td>
+		</tr>
+		<tr>
+			<td>保&nbsp;&nbsp;值</td>
+			<td colspan="4">
+				<ul class="baozhi">
+					<li class="r_01 filltext" id="fmaintenanceFee"></li>
+					<li>
+						<div class="rate">
+							<span id="fhedgeRatio" class="filltext"></span>
+							=
+							<s class="f_red filltext" id="fhedgeAmount"></s>
+						</div>
+					</li>
+				</ul>
+				<div class="clear"></div>
+			</td>
+			<td>代收货款手续费：</td>
+			<td class="f_red filltext" id="fcodfee"></td>
+		</tr>
+		<tr>
+			<td>运费总计</td>
+			<td colspan="4"><b class="f_red filltext" id="ftotalFee"></b></td>
+			<td>大写：</td>
+			<td class="f_red filltext" id="ftotalFee_text"></td>
+		</tr>
+	</thead>
+</table>

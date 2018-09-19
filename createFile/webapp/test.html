@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="utf-8">
+    <title>测试API</title>
+    <script src="/assets/javascripts/jquery/jquery.min.js"></script>
+    <script src="/assets/javascripts/api/e.js"></script>
+	<meta http-equiv="Content-Type" content="multipart/form-data; charset=utf-8" />
+
+    <script type="text/javascript">
+        var api_base=getApiBase();
+
+        function getApiBase(){
+            var curServerPath=window.document.location.href;
+            if(curServerPath.indexOf('test.gjd8.com')>-1){
+                return "http://www.beautyouth.com:7002";
+            }
+            var pathName=window.document.location.pathname;
+            var pos=0;
+            if(pathName&&typeof(pathName)!="undefined" &&pathName.length>1){
+                pos=curServerPath.indexOf(pathName);
+            }else{
+                pos=curServerPath.length-1;
+            }
+            var serverPath=curServerPath.substring(0,pos);
+            return serverPath;
+
+        }
+
+        function getUserInfo(){
+            var _storage=null;
+            if(localStorage){
+                _storage=localStorage;
+                if(!_storage||!_storage.getItem("tokenInfo")){if(window&&window.localStorage){_storage = window.localStorage;}}
+            }else if(window&&window.localStorage){
+                _storage=window.localStorage;
+            }
+            var _userInfo=_storage.getItem("tokenInfo");
+            if(!_userInfo || _userInfo==null){
+                alert("参数错误，请重新登录");
+            }
+            else{
+                _userInfo=JSON.parse(_userInfo);
+                return _userInfo;
+            }
+        }
+
+        function getHeaderObj(){
+            var _userInfo=getUserInfo();
+            document.getElementById("packet_check").value=_userInfo.packet_check;
+            document.getElementById("packet_token").value=_userInfo.packet_token;
+
+        }
+
+        function adduser(){
+            var form=document.forms[0];
+            var _storage=null;
+            if(localStorage){
+                _storage=localStorage;
+                if(!_storage||!_storage.getItem("tokenInfo")){if(window&&window.localStorage){_storage = window.localStorage;}}
+
+            }else if(window&&window.localStorage){
+                _storage=window.localStorage;
+            }
+            var _userOperation=_storage.getItem("userOperation");
+            if(_userOperation!=null){
+                _userOperation=JSON.parse(_userOperation);
+                $.each(_userOperation,function(i,v){
+                    if(v['foperationNo']==document.getElementById("actionStr").value){
+                        form.action=api_base+v['fajaxUrl'];
+                    }
+                });
+            }
+            else{
+                alert("参数错误，请重新登录");
+                return false;
+            }
+            getHeaderObj();
+            form.submit();
+        }
+    </script>
+
+
+</head>
+<body>
+
+	msgID:<input type="text" id="actionStr" value="1001001834" />
+	<form method="POST" action="" enctype="multipart/form-data" >
+		<input type="hidden" id="packet_check" name="packet_check" />
+		<input type="hidden" id="packet_token" name="packet_token" />
+		内容:<input type="text" name="msg" value="" />
+		<!--内容:<input type="file" name="staffFiles"  />-->
+		<input type="button" value="提交"  onclick="adduser()"/>
+	</form>
+</body>
+</html>

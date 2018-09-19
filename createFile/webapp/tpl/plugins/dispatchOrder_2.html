@@ -1,0 +1,184 @@
+<table border="0" cellspacing="0" class="bill_table_01">
+	<thead>
+		<tr>
+			<th colspan="100">
+				<div class="address">
+					<!--总部地址：南三环与文治路交叉口向南3公里路西姚庄路（河南万里物流园）&nbsp;&nbsp;&nbsp;&nbsp;
+					业务咨询：0371-68295656 &nbsp;&nbsp;&nbsp;&nbsp;
+					货款查询：0371-68295888 &nbsp;&nbsp;&nbsp;&nbsp;
+					客服：0371-68295000 &nbsp;&nbsp;&nbsp;&nbsp;
+					传真：0371-60690907-->
+					<div id="orderNo_wrap" style="display:none;">
+						<button class="btn d_back" style="display:none;">
+							<i class="icon-arrow-left dqq_icon"></i>
+							返回
+						</button>
+						<b id="changeDispatchOrder" >请输入新运单号：</b>
+						<input class='bi_01 mt10' type='text' id="fdispatchOrderNo" name="fdispatchOrderNo" title="请输入新运单号" placeholder="请输入新运单号" data-rule-required='true' taborderIdx="2" />
+						<span id="thirdParty_button" style="display:none;">
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<input class='bi_01 mt10' type='text' id="" name="" title="请输入公司名称" placeholder="请输入公司名称" style="width:160px;" />
+							<button type='button' class="upfile btn btn-warning">批量导入</button>
+						</span>
+					</div>
+				</div>
+			</th>
+		</tr>
+		<tr>
+			<td width="10%">配送时间：</td>
+			<td width="10%"><input type='text' class='bi_01 ly_date' id="fsendDate" title="请填写配送时间" readonly /></td>
+			<td width="14%">起站：</td>
+			<td width="22%"><select class='select2' id='fsendSiteNo' name="fsendSiteNo" style="width:100%" ></select></td>
+			<td width="12%">到达站：</td>
+			<td width="32%" colspan="2" id="selectsitecleararea" ><select class='select2' id='freceiveSiteNo' name="freceiveSiteNo" style="width:100%" taborderIdx="3"></select></td>
+		</tr>
+		<tr>
+			<td>发货人</td>
+			<td colspan="2">
+				<input class='bi_01' id='fsenderName' name="fsenderName" type='text' placeholder="请填写发货人" title="请填写发货人" data-rule-required='true' taborderIdx="4" />
+			</td>
+			<td width="12%">电&nbsp;&nbsp;话</td>
+			<td width="2%">
+				<input class='bi_01' id='fsenderMobile' name="fsenderMobile" type='text' placeholder="请填写发货人电话" title="请填写发货人电话" data-rule-required='true' taborderIdx="5" />
+			</td>
+			<td width="22%" rowspan="1" colspan="2" id="selectcityclearreceive">
+				<div class='span4'>
+					<select class='input-block-level select2' id='freceiverProvinceCode' name="freceiverProvinceCode" title="请选择省份" style="width:100%"></select>
+				</div>
+				<div class='span4'>
+					<select class='input-block-level select2' id='freceiverCityCode' name="freceiverCityCode" title="请选择城市" style="width:100%"></select>
+				</div>
+				<div class='span4'>
+					<select class='input-block-level select2' id='freceiverCountyCode' name="freceiverCountyCode" title="请选择县区" style="width:100%"></select>
+				</div>
+			</td>
+
+		</tr>
+		<tr>
+			<td>收货人</td>
+			<td colspan="2" >
+				<input class='bi_01' id='freceiverName' name="freceiverName" type='text' placeholder="请填写收货人" title="请填写收货人" data-rule-required='true' taborderIdx="6" />
+			</td>
+			<td>电&nbsp;&nbsp;话</td>
+			<td>
+				<input class='bi_01' id='freceiverMobile' name="freceiverMobile" type='text' placeholder="请输入收货人电话" title="请输入收货人电话" data-rule-required='true' taborderIdx="7" />
+			</td>
+			<td width="22%" rowspan="2" colspan="2">
+				<dl class="memo">
+					<dt>备注：</dt>
+					<dd>
+						<textarea id="fremark" name="fremark" class="input-block-level" placeholder="" rows="2"  ></textarea>
+					</dd>
+					<div class="clear"></div>
+				</dl>
+				<div class="clear"></div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">货物名称</td>
+			<td>包&nbsp;&nbsp;装</td>
+			<td>数&nbsp;&nbsp;量</td>
+			<td>运费</td>
+		</tr>
+		<tr>
+			<input type='hidden' id="fgoodsFid_0" />
+			<input type='hidden' id="fgoodsNo_0" />
+			<td colspan="2"><input class='bi_02' id="fgoodsName_0" type='text' taborderIdx="12" /></td>
+			<td><input class='bi_02' id="fpacket_0" type='text' taborderIdx="13" /></td>
+			<td><input class='bi_02' id="fgoodsNum_0" name="fgoodsNum" type='text' taborderIdx="14" /></td>
+			<td><input class='bi_02 f_red' id="fgoodPrice_0" name="fgoodPrice" type='text' disabled /></td>
+			<td rowspan="3" colspan="2">
+				<ul class="memo">
+					<dt>付款方式：</dt>
+					<dd>
+						<select id="fpayType" name="fpayType" taborderIdx="8"></select>
+					</dd>
+					<div class="clear"></div>
+				</ul>
+				<div class="clear"></div>
+			</td>
+		</tr>
+		<tr>
+			<input type='hidden' id="fgoodsFid_1" />
+			<input type='hidden' id="fgoodsNo_1" />
+			<td colspan="2"><input class='bi_02' id="fgoodsName_1" type='text' /></td>
+			<td><input class='bi_02' id="fpacket_1" type='text' /></td>
+			<td><input class='bi_02' id="fgoodsNum_1" name="fgoodsNum" type='text' /></td>
+			<td><input class='bi_02 f_red' id="fgoodPrice_1" name="fgoodPrice" type='text' disabled /></td>
+		</tr>
+		<tr>
+			<input type='hidden' id="fgoodsFid_2" />
+			<input type='hidden' id="fgoodsNo_2" />
+			<td colspan="2"><input class='bi_02' id="fgoodsName_2" type='text' /></td>
+			<td><input class='bi_02' id="fpacket_2" type='text' /></td>
+			<td><input class='bi_02' id="fgoodsNum_2" name="fgoodsNum" type='text' /></td>
+			<td><input class='bi_02 f_red' id="fgoodPrice_2" name="fgoodPrice" type='text' disabled /></td>
+		</tr>
+		<tr>
+			<td colspan="2">合&nbsp;&nbsp;计</td>
+			<td></td>
+			<td class="f_red" id="total_num"></td>
+			<td><input class='bi_02 f_red' id="fcarriage" name="fcarriage" type='text' placeholder="请输入运费" title="请输入运费" taborderIdx="11" data-rule-required='true' /></td>
+			<td>代收货款卡号：</td>
+			<td><input class='bi_01' id="fwlcardNo" name="fwlcardNo" type='text' taborderIdx="9" /></td>
+		</tr>
+		<tr>
+			<td>送货费</td>
+			<td><input class='bi_01' id='fdeliveryFee' name="fdeliveryFee" type='text' placeholder="请输入送货费" title="请输入送货费" /></td>
+			<td>转接费</td>
+			<td><input class='bi_01' id='fpickFee' name="fpickFee" type='text' placeholder="请输入转接费" title="请输入转接费"  /></td>
+			<td class="huidan">
+				回单：
+				<select id='fisRequiredReceipt' name="fisRequiredReceipt"  >
+					<option value="0">否</option>
+					<option value="1">是</option>
+				</select>
+			</td>
+			<td>代收货款：</td>
+			<td>
+				<ul class="bt_01_widthText">
+					<li class="first">￥</li>
+					<li><input class='bi_01 f_red' id="fcodTotal" name="fcodTotal" type='text' placeholder="请输入代收货款" title="请输入代收货款" taborderIdx="10" /></li>
+					<li class="last">元</li>
+				</ul>
+				<div class="clear"></div>
+			</td>
+		</tr>
+		<tr>
+			<td>保&nbsp;&nbsp;值</td>
+			<td colspan="4">
+				<ul class="baozhi">
+					<li>
+						<input class='bi_01' id='fmaintenanceFee' name="fmaintenanceFee" type='text' placeholder="请输入保值金额费" title="请输入保值金额费"  />
+					</li>
+					<li>
+						<div class="rate" id="rate">
+							<select id="fhedgeRatio" title="请选择保值费用比率" data-rule-required='true'></select>
+							=
+							<s class="f_red" id="fhedgeAmount"></s>
+						</div>
+					</li>
+				</ul>
+				<div class="clear"></div>
+			</td>
+			<td>代收货款手续费：</td>
+			<td class="f_red" id="fcodfee"></td>
+		</tr>
+		<tr>
+			<td>运费总计</td>
+			<td colspan="4"><b class="f_red" id="ftotalFee"></b></td>
+			<td>大写：</td>
+			<td class="f_red" id="ftotalFee_text"></td>
+		</tr>
+	</thead>
+</table>
+
+<table width="100%" class="bottom_fields mt20">
+	<tr>
+		<td align="center">
+			<span class="files_name">快递员：</span><input id="fdispatcherName" name="fdispatcherName" type='text' placeholder="请输入快递员名称" title="请输入快递员名称" data-rule-required='true' taborderIdx="15" />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<span class="files_name">分拣员：</span><input id="fsorterName" name="fsorterName" type='text' placeholder="请输入分拣员名称" title="请输入分拣员名称"   />
+		</td>
+	</tr>
+</table>

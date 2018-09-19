@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+.grey_top{ position: relative;height:44px; background-color:#f8f8f8; width:100%; text-align:center; line-height:44px; color:#333; font-size:17px; border-bottom:solid 1px #ececec;}
+
+.green_back{ display:block; float:left; background-image:url(/assets/images/weChat/green_back.png); width:11px; height:19px; margin:18px 0 0 10px;}
+
+.green_sort{ float:right; margin:16px 10px 0 0; background-image:url(/assets/images/weChat/green_xl.png); width:20px; height:23px;}
+.validate-required::before{
+    content: '*';
+    color: red;
+    font-size: 50%;
+}

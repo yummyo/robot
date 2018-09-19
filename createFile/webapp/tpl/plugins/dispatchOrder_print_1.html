@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+	<link href='/assets/stylesheets/plugins/datatables/bootstrap-datatable.css' media='all' rel='stylesheet' type='text/css' />
+	<link href="/assets/stylesheets/dqq.css" rel="stylesheet">
+	<script>
+		var _page="dispatchOrder_print_1";
+		var _pageType=2;
+	</script>
+</head>
+<body class="inner_body" id="all_date">
+	<div class="wrapper-content print_page">
+		<table width="100%">
+			<tr align="center" >
+				<td>
+					<b>装车单号：</b><span style="text-decoration:underline;" id="floadListSerialNo" /></span>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" class="td_info_01">
+					<b>车牌号：</b><span style="text-decoration:underline;"id="fplateNo" ></span>&nbsp;&nbsp;&nbsp;&nbsp;
+					<b>线路：</b><span style="text-decoration:underline;" id="fsendreceiveSiteName" ></span>&nbsp;&nbsp;&nbsp;&nbsp;
+					<b>装车时间：</b><span style="text-decoration:underline;" id="floadDate" ></span>&nbsp;&nbsp;&nbsp;&nbsp;
+					<b>司机：</b><span style="text-decoration:underline;" id="fdriverName" ></span>&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+			</tr>
+		</table>
+		<table class="data-table tb_list_01" width="100%" id="print_mingxi">
+			<thead>
+				<tr class="title">
+					<th colspan="100">装车单明细</th>
+				</tr>
+				<tr>
+					<th>序号</th>
+					<th>票号</th>
+					<th>收发地</th>
+					<th>发货人</th>
+					<th>发货人电话</th>
+					<th>收货人</th>
+					<th>收货人电话</th>
+					<th>件数</th>
+					<th>付款方式</th>
+					<th>运费</th>
+					<th>保值费</th>
+					<th>送货费</th>
+					<th>转接费</th>
+					<th>合计</th>
+					<th>代收款</th>
+					<th>代收款手续费</th>
+					<th>货物</th>
+					<th>会员卡号</th>
+					<th>备注</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+		<hr class="hr_01" />
+		<table class="data-table tb_list_01" width="100%" id="total_wrap">
+			<thead>
+				<tr class="title">
+					<th colspan="100">装车单合计</th>
+				</tr>
+				<tr>
+					<th></th>
+					<th>票数</th>
+					<th>件数</th>
+					<th><span class="fpayName2">提付</span></th>
+					<th><span class="fpayName1">交付</span></th>
+					<th><span class="fpayName3">合同户</span></th>
+					<th>保值费</th>
+					<th>送货费</th>
+					<th>转接费</th>
+					<th>合计</th>
+					<th>代收款</th>
+					<!--<th>代收货款手续费</th>-->
+					<th>中转费用</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="zhongzhuan">
+					<td>中转</td>
+					<td class="piaoshu"></td>
+					<td class="jianshu"></td>
+					<td class="tifu"></td>
+					<td class="jiaofu"></td>
+					<td class="hetong"></td>
+					<td class="baozhifei"></td>
+					<td class="songhuofei"></td>
+					<td class="jiehuofei"></td>
+					<td class="heji"></td>
+					<td class="daishoukuan"></td>
+					<!--<td class="daishoukuan_shouxu"></td>-->
+					<td class="zhongzhuanfeiyong"></td>
+				</tr>
+				<tr class="zhengcheng">
+					<td>正程</td>
+					<td class="piaoshu"></td>
+					<td class="jianshu"></td>
+					<td class="tifu"></td>
+					<td class="jiaofu"></td>
+					<td class="hetong"></td>
+					<td class="baozhifei"></td>
+					<td class="songhuofei"></td>
+					<td class="jiehuofei"></td>
+					<td class="heji"></td>
+					<td class="daishoukuan"></td>
+					<!--<td class="daishoukuan_shouxu"></td>-->
+					<td class="zhongzhuanfeiyong"></td>
+				</tr>
+				<tr class="fancheng">
+					<td>返程</td>
+					<td class="piaoshu"></td>
+					<td class="jianshu"></td>
+					<td class="tifu"></td>
+					<td class="jiaofu"></td>
+					<td class="hetong"></td>
+					<td class="baozhifei"></td>
+					<td class="songhuofei"></td>
+					<td class="jiehuofei"></td>
+					<td class="heji"></td>
+					<td class="daishoukuan"></td>
+					<!--<td class="daishoukuan_shouxu"></td>-->
+					<td class="zhongzhuanfeiyong"></td>
+				</tr>
+				<tr class="all">
+					<td>合计</td>
+					<td class="piaoshu"></td>
+					<td class="jianshu"></td>
+					<td class="tifu"></td>
+					<td class="jiaofu"></td>
+					<td class="hetong"></td>
+					<td class="baozhifei"></td>
+					<td class="songhuofei"></td>
+					<td class="jiehuofei"></td>
+					<td class="heji"></td>
+					<td class="daishoukuan"></td>
+					<!--<td class="daishoukuan_shouxu"></td>-->
+					<td class="zhongzhuanfeiyong"></td>
+				</tr>
+			</tbody>
+		</table>
+		<table width="100%">
+			<tr>
+				<td align="center" class="td_info_02">
+					<b>制单员：</b><span style="text-decoration:underline;" id="frealName" ></span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<b>制单网点：</b><span style="text-decoration:underline;" id="fsiteName" ></span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<b>到货网点：</b><span style="text-decoration:underline;" id="fshSiteName" ></span>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" class="td_info_02 p_hidden">
+					<input type="button" class="p_btn_01" value="打印设置" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" class="p_btn_01" value="打印" onclick="window.print();" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" class="p_btn_01" value="关闭" onclick="closePrint();" />
+				</td>
+			</tr>
+		</table>
+	</div>
+	<script src='/assets/javascripts/jquery/jquery.min.js' type='text/javascript'></script>
+	<script src='/assets/javascripts/bootstrap/bootstrap.min.js' type='text/javascript'></script>
+	<script src="/assets/javascripts/plugins/validate/jquery.validate.min.js"></script>
+	<script src='/assets/javascripts/plugins/validate/additional-methods.js' type='text/javascript'></script>
+	<script src='/assets/javascripts/plugins/datatables/jquery.dataTables.min.js' type='text/javascript'></script>
+	<script src='/assets/javascripts/plugins/datatables/jquery.dataTables.columnFilter.js' type='text/javascript'></script>
+	<script src="/assets/javascripts/dqq_include.js" type="text/javascript"></script>
+	<script src="/assets/javascripts/api/plugins/dispatchOrder.js" type="text/javascript"></script>
+	<script src="/assets/javascripts/dqq_page_public.js"></script>
+	<script src="/assets/javascripts/dqq_function.js"></script>
+</body>
+</html>

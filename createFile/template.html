@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <link href='../assets/stylesheets/bootstrap/bootstrap.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='../assets/stylesheets/bootstrap/bootstrap-responsive.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='../assets/stylesheets/jquery_ui/jquery-ui-1.10.0.custom.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='../assets/stylesheets/jquery_ui/jquery.ui.1.10.0.ie.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='../assets/stylesheets/light-theme.css' id='color-settings-body-color' media='all' rel='stylesheet' type='text/css' />
+    <link href="../assets/stylesheets/font-awesome.min.css?v=4.3.0" rel="stylesheet">
+	<link href="../assets/stylesheets/plugins/datatables/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+	<link href='../assets/stylesheets/mricode.pagination.css' media='all' rel='stylesheet' type='text/css' />
+	<link href="../assets/stylesheets/dqq.css" rel="stylesheet">
+	<script>
+		var _page="&&pageName&&";
+	</script>
+</head>
+<body class="inner_body" id="all_date">
+	<div class="wrapper-content">
+		<section>
+			<div class='container-fluid'>
+				<div class='row-fluid' id='content-wrapper'>
+					<div class='span12 box bordered-box dark-orange-border mt20'>
+						<div class='box-header dark-orange-background'>
+							<div class='title'></div>
+							<div class='actions'>
+								<a href="javascript:void(0);" class="btn box-collapse btn-mini btn-link"><i class="icon iconfont">&#xe9ce;</i></a>
+							</div>
+						</div>
+						<div class='box-content'>&&searchCondition&&</div>
+					</div>
+
+					<div class='row-fluid mt20 layout_table'>
+						<div class='span12 box bordered-box orange-border'>
+							<div class='box-header orange-background'>
+								<div class='title'></div>
+								<div class='actions'>
+									<a href="javascript:void(0);" class="btn box-collapse2 btn-mini btn-link"><i class="icon iconfont">&#xe9ce;</i></a>
+								</div>
+							</div>
+							<div class='table_list'>
+								<table class='data-table table table-bordered table-striped table-hover' cellspacing="0" width="100%" id="table_01">
+									<thead>
+										&&theadHtml&&
+									</thead>
+									<tbody></tbody>
+								</table>
+							
+								<table align="center">
+									<tr>
+										<td><div id="page_01" class="m-pagination"></div></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="dqq_blank"></div>
+	</div>
+	<script src='../assets/javascripts/jquery/jquery.min.js' type='text/javascript'></script>
+	<script src='../assets/javascripts/bootstrap/bootstrap.min.js' type='text/javascript'></script>
+	<script src="../assets/javascripts/mricode.pagination.js"></script>
+	<script src="../assets/javascripts/dqq_include.js" type="text/javascript"></script>
+	<script src="../assets/javascripts/api/&&pageName&&.js" type="text/javascript"></script>
+	<script src="../assets/javascripts/dqq_page_public.js"></script>
+	<script src="../assets/javascripts/dqq_function.js"></script>
+</body>
+</html>

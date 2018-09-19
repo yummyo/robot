@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="utf-8">
+    <title>打印测试</title>
+    <script language="javascript" src="LodopFuncs.js"></script>
+
+    <script type="text/javascript">
+        var LODOP;
+        //打印设计
+        function DisplayDesign() {
+            LODOP=getLodop();
+            createLyjy();
+            //createTable();
+//           LODOP.PRINT();
+            LODOP.SET_SHOW_MODE("DESIGN_IN_BROWSE",1);
+            LODOP.PRINT_DESIGN();
+        };
+        function CreatePage() {
+            LODOP.SET_PRINT_PAGESIZE(1,'75mm','50mm',"河南中中信息技术有限公司");
+            LODOP.ADD_PRINT_TEXTA("disgoodssum","1.5mm","1.5mm","74mm","10mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize",24);
+            LODOP.SET_PRINT_STYLEA(0,"Alignment",2);
+            LODOP.SET_PRINT_STYLEA(0,"Bold",1);
+            LODOP.SET_PRINT_STYLEA(0,"Horient",2);
+            LODOP.ADD_PRINT_TEXTA("fsendReceiveName","13mm","1.85mm","74.08mm","3.97mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize",13.5);
+            LODOP.SET_PRINT_STYLEA(0,"Alignment",2);
+            LODOP.SET_PRINT_STYLEA(0,"Bold",1);
+            LODOP.SET_PRINT_STYLEA(0,"Horient",2);
+            LODOP.ADD_PRINT_BARCODE("19.5mm","8mm","64mm","13.5mm","128B","");
+            LODOP.SET_PRINT_STYLEA(0,"NotOnlyHighPrecision",true);
+            LODOP.SET_PRINT_STYLEA(0,"ShowBarText",0);
+            LODOP.SET_PRINT_STYLEA(0,"GroundColor","#FFFFFF");
+            LODOP.SET_PRINT_STYLEA(0,"Horient",2);
+            LODOP.ADD_PRINT_TEXTA("fdispatchOrderNo","34.5mm","1.85mm","74.08mm","6.61mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize",20);
+            LODOP.SET_PRINT_STYLEA(0,"Alignment",2);
+            LODOP.SET_PRINT_STYLEA(0,"Bold",1);
+            LODOP.SET_PRINT_STYLEA(0,"Horient",2);
+
+        };
+        //票据打印模板
+        function createTable(){
+            var topidx=0;
+            var leftidx=0;
+            LODOP.SET_PRINT_PAGESIZE(1, "190.5mm","101.8mm","河南中中信息技术有限公司")
+
+            LODOP.ADD_PRINT_BARCODE((2+topidx)+"mm",(143+leftidx)+"mm","38mm","10mm","Code93","11111");
+
+            //配送时间
+            LODOP.ADD_PRINT_TEXTA("t_pssj",(13.5+topidx)+"mm",(35+leftidx)+"mm","30mm","5mm","2017-10-10 03:33:33");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+            //发货网点
+            LODOP.ADD_PRINT_TEXTA("t_fhwd",(13.5+topidx)+"mm",(77+leftidx)+"mm","52mm","5mm","郑州配送中心");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+            //到达网点
+            LODOP.ADD_PRINT_TEXTA("t_dhwd",(13.5+topidx)+"mm",(140+leftidx)+"mm","52mm","5mm","许昌");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+            //发货人
+            LODOP.ADD_PRINT_TEXTA("t_fhr",(20+topidx)+"mm",(45+leftidx)+"mm","26mm","6mm","王刚");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+            //发货人电话
+            LODOP.ADD_PRINT_TEXTA("t_fhrdh",(20+topidx)+"mm",(94+leftidx)+"mm","26mm","6mm","1592378732");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+            //备注
+            LODOP.ADD_PRINT_TEXTA("t_bz",(19+topidx)+"mm",(128+leftidx)+"mm","50mm","17mm","   备注信息");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+
+            //收货人
+            LODOP.ADD_PRINT_TEXTA("t_shr",(26+topidx)+"mm",(45+leftidx)+"mm","26mm","6mm","李菲");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+            //收货人电话
+            LODOP.ADD_PRINT_TEXTA("t_shrdh",(26+topidx)+"mm",(94+leftidx)+"mm","26mm","6mm","13082873728");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+            //货物1
+            LODOP.ADD_PRINT_TEXTA("t_hwmc1",(37+topidx)+"mm",(17+leftidx)+"mm","28mm","6mm","电脑");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+            //包装1
+            LODOP.ADD_PRINT_TEXTA("t_hwbz1",(37+topidx)+"mm",(45+leftidx)+"mm","20mm","6mm","盒子");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+            //数量1
+            LODOP.ADD_PRINT_TEXTA("t_hwsh1",(37+topidx)+"mm",(65+leftidx)+"mm","14.5mm","6mm","3");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+
+            //货物2
+            LODOP.ADD_PRINT_TEXTA("t_hwmc2",(43+topidx)+"mm",(17+leftidx)+"mm","28mm","6mm","手机");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+            //包装2
+            LODOP.ADD_PRINT_TEXTA("t_hwbz2",(43+topidx)+"mm",(45+leftidx)+"mm","20mm","6mm","袋子");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+            //数量2
+            LODOP.ADD_PRINT_TEXTA("t_hwsh2",(43+topidx)+"mm",(65+leftidx)+"mm","14.5mm","6mm","1");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+
+            //货物件数合计
+            LODOP.ADD_PRINT_TEXTA("t_hwhj",(49+topidx)+"mm",(65+leftidx)+"mm","25mm","6mm","4");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+            //运费合计
+            LODOP.ADD_PRINT_TEXTA("t_yfhj",(49+topidx)+"mm",(106+leftidx)+"mm","25mm","6mm","14");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+            //送货费
+            LODOP.ADD_PRINT_TEXTA("t_shf",(54+topidx)+"mm",(45+leftidx)+"mm","20mm","6mm","10");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+            //转接费
+            LODOP.ADD_PRINT_TEXTA("t_jhf",(54+topidx)+"mm",(80+leftidx)+"mm","25mm","6mm","10");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+            //保值
+            LODOP.ADD_PRINT_TEXTA("t_bzf",(59+topidx)+"mm",(45+leftidx)+"mm","82mm","8mm","10");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","14");
+
+
+            //运费合计大写
+            LODOP.ADD_PRINT_TEXTA("t_yfhjdx",(67+topidx)+"mm",(45+leftidx)+"mm","82mm","6mm","40");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+
+            //付款方式
+            LODOP.ADD_PRINT_TEXTA("t_fkfs",(42+topidx)+"mm",(145+leftidx)+"mm","26mm","6mm","交付");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+            //代收款卡号
+            LODOP.ADD_PRINT_TEXTA("t_dskkh",(48+topidx)+"mm",(152+leftidx)+"mm","26mm","6mm","1010101010");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+            //代收款合计
+            LODOP.ADD_PRINT_TEXTA("t_dskhj",(54+topidx)+"mm",(149+leftidx)+"mm","26mm","6mm","3000");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+            //大写
+            LODOP.ADD_PRINT_TEXTA("t_dskdx",(61+topidx)+"mm",(128+leftidx)+"mm","50mm","12mm","   代收款大写");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+
+            //经办人
+            LODOP.ADD_PRINT_TEXTA("t_jbr",(74+topidx)+"mm",(160+leftidx)+"mm","26mm","6mm","宋先生");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+            //分拣人
+            LODOP.ADD_PRINT_TEXTA("t_fjr",(80+topidx)+"mm",(160+leftidx)+"mm","26mm","6mm","王晓生");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+            LODOP.ADD_PRINT_BARCODE((81+topidx)+"mm",(55+leftidx)+"mm","80mm","12mm","128B","22222222");
+            LODOP.SET_PRINT_STYLEA(0,"ShowBarText",0);
+        }
+
+        // 洛阳交运票据打印模板
+        function createLyjy(){
+            var topidx=0;
+            var leftidx=0;
+            LODOP.SET_PRINT_PAGESIZE(1, "1900","1018","河南中中信息技术有限公司");
+
+//            LODOP.ADD_PRINT_BARCODE("8mm","130mm","45mm","12mm","Code93","11111");
+
+            //配送时间
+            LODOP.ADD_PRINT_TEXTA("t_pssj",(20+topidx)+"mm","34mm","28mm","5mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+            //发货网点
+            LODOP.ADD_PRINT_TEXTA("t_fhwd",(20+topidx)+"mm","71mm","28mm","5mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+            //到达网点
+            LODOP.ADD_PRINT_TEXTA("t_dhwd",(20+topidx)+"mm","100mm","35mm","5mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+            //发货人
+            LODOP.ADD_PRINT_TEXTA("t_fhr",(27+topidx)+"mm","35mm","21mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+            //发货人电话
+            LODOP.ADD_PRINT_TEXTA("t_fhrdh",(27+topidx)+"mm","73mm","40mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+            //备注
+            LODOP.ADD_PRINT_TEXTA("t_bz",(27+topidx)+"mm","113mm","50mm","12mm","      ");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+
+            //收货人
+            LODOP.ADD_PRINT_TEXTA("t_shr",(34+topidx)+"mm","35mm","21mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+            //收货人电话
+            LODOP.ADD_PRINT_TEXTA("t_shrdh",(34+topidx)+"mm","73mm","40mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+
+
+
+            //代收款卡号
+            LODOP.ADD_PRINT_TEXTA("t_dskkh",(42+topidx)+"mm","135mm","37mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+            //货物1
+            LODOP.ADD_PRINT_TEXTA("t_hwmc1",(48+topidx)+"mm","17mm","16mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+            //包装1
+            LODOP.ADD_PRINT_TEXTA("t_hwbz1",(48+topidx)+"mm","33.5mm","10mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+            //数量1
+            LODOP.ADD_PRINT_TEXTA("t_hwsl1",(48+topidx)+"mm","44mm","10mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+            //代收款合计
+            LODOP.ADD_PRINT_TEXTA("t_dskhj",(48+topidx)+"mm","135mm","15mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+            //代收款手续费
+            LODOP.ADD_PRINT_TEXTA("t_dsksxf",(48+topidx)+"mm","163mm","10mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+            //付款方式
+            LODOP.ADD_PRINT_TEXTA("t_fkfs_1",(48+topidx)+"mm","98mm","10mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+            //付款方式
+            LODOP.ADD_PRINT_TEXTA("t_fkfs_2",(48+topidx)+"mm","109mm","10mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+
+            //货物2
+            LODOP.ADD_PRINT_TEXTA("t_hwmc2",(54.5+topidx)+"mm","17mm","16mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+            //包装2
+            LODOP.ADD_PRINT_TEXTA("t_hwbz2",(54.5+topidx)+"mm","33.5mm","10mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+            //数量2
+            LODOP.ADD_PRINT_TEXTA("t_hwsl2",(54.5+topidx)+"mm","44mm","10mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+            //大写
+            LODOP.ADD_PRINT_TEXTA("t_dskdx",(54+topidx)+"mm","123mm","50mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+
+            //付款方式
+            LODOP.ADD_PRINT_TEXTA("t_fkfs_3",(53+topidx)+"mm","98mm","10mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+            //付款方式
+            LODOP.ADD_PRINT_TEXTA("t_fkfs_4",(53+topidx)+"mm","109mm","10mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+            //货物3
+            LODOP.ADD_PRINT_TEXTA("t_hwmc3",(61.5+topidx)+"mm","17mm","16mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+            //包装3
+            LODOP.ADD_PRINT_TEXTA("t_hwbz3",(61.5+topidx)+"mm","33.5mm","10mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+            //数量3
+            LODOP.ADD_PRINT_TEXTA("t_hwsl3",(61.5+topidx)+"mm","44mm","10mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+
+            //送货费
+            LODOP.ADD_PRINT_TEXTA("t_shf",(61.1+topidx)+"mm","99mm","14mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+            //转接费
+            LODOP.ADD_PRINT_TEXTA("t_jhf",(61.1+topidx)+"mm","163mm","10mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+
+            //货物件数合计
+            LODOP.ADD_PRINT_TEXTA("t_hwhj",(67+topidx)+"mm","44mm","10mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+
+
+            //运费合计
+            LODOP.ADD_PRINT_TEXTA("t_yf",(67+topidx)+"mm","75.5mm","10mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+
+            //保值
+            LODOP.ADD_PRINT_TEXTA("t_bzf",(67+topidx)+"mm","99mm","77mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","12");
+
+            //运费合计小写
+            LODOP.ADD_PRINT_TEXTA("t_yfhjxx",(73+topidx)+"mm","47mm","33mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+
+            //运费合计大写
+            LODOP.ADD_PRINT_TEXTA("t_yfhjdx",(73+topidx)+"mm","110mm","63mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+
+
+            //代收款合计
+//            LODOP.ADD_PRINT_TEXTA("t_dskhj","51mm","135mm","26mm","6mm","3000");
+//            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+//            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+
+
+            //经办人
+            LODOP.ADD_PRINT_TEXTA("t_jbr",(89+topidx)+"mm","34mm","20mm","6mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+//            //分拣人
+//            LODOP.ADD_PRINT_TEXTA("t_fjr",(80+topidx)+"mm",(160+leftidx)+"mm","26mm","6mm","王晓生");
+//            LODOP.SET_PRINT_STYLEA(0,"FontColor","#000000");
+//            LODOP.SET_PRINT_STYLEA(0,"FontSize","10");
+
+//            LODOP.ADD_PRINT_BARCODE((81+topidx)+"mm",(55+leftidx)+"mm","80mm","12mm","128B","22222222");
+//            LODOP.SET_PRINT_STYLEA(0,"ShowBarText",0);
+        }
+
+        function createTSC(){
+            LODOP.SET_PRINT_PAGESIZE(1,'75mm','50mm',"河南中中信息技术有限公司");
+            LODOP.ADD_PRINT_TEXTA("disgoodssum","16.17mm","1.59mm","74.08mm","10.05mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize",24);
+            LODOP.SET_PRINT_STYLEA(0,"Alignment",2);
+            LODOP.SET_PRINT_STYLEA(0,"Bold",1);
+            LODOP.SET_PRINT_STYLEA(0,"Horient",2);
+            LODOP.ADD_PRINT_TEXTA("fsendReceiveName","26.75mm","1.59mm","74.08mm","3.97mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize",13.5);
+            LODOP.SET_PRINT_STYLEA(0,"Alignment",2);
+            LODOP.SET_PRINT_STYLEA(0,"Bold",1);
+            LODOP.SET_PRINT_STYLEA(0,"Horient",2);
+            LODOP.ADD_PRINT_BARCODE("32.05mm","6.23mm","48.03mm","13.49mm","128B","");
+            LODOP.SET_PRINT_STYLEA(0,"NotOnlyHighPrecision",true);
+            LODOP.SET_PRINT_STYLEA(0,"ShowBarText",0);
+            LODOP.SET_PRINT_STYLEA(0,"GroundColor","#FFFFFF");
+            LODOP.SET_PRINT_STYLEA(0,"Horient",2);
+            LODOP.ADD_PRINT_TEXTA("fdispatchOrderNo","46.33mm","1.59mm","74.08mm","6.61mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize",20);
+            LODOP.SET_PRINT_STYLEA(0,"Alignment",2);
+            LODOP.SET_PRINT_STYLEA(0,"Bold",1);
+            LODOP.SET_PRINT_STYLEA(0,"Horient",2);
+
+        }
+
+        //HD100打印模板
+        function createHD100(){
+            LODOP.SET_PRINT_PAGESIZE(1,'75mm','50mm',"河南中中信息技术有限公司");
+            LODOP.ADD_PRINT_TEXTA("disgoodssum","1.5mm","1.5mm","74mm","10mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize",24);
+            LODOP.SET_PRINT_STYLEA(0,"Alignment",2);
+            LODOP.SET_PRINT_STYLEA(0,"Bold",1);
+            LODOP.SET_PRINT_STYLEA(0,"Horient",2);
+            LODOP.ADD_PRINT_TEXTA("fsendReceiveName","13mm","1.85mm","74.08mm","3.97mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize",13.5);
+            LODOP.SET_PRINT_STYLEA(0,"Alignment",2);
+            LODOP.SET_PRINT_STYLEA(0,"Bold",1);
+            LODOP.SET_PRINT_STYLEA(0,"Horient",2);
+            LODOP.ADD_PRINT_BARCODE("19.5mm","8mm","64mm","13.5mm","128B","");
+            LODOP.SET_PRINT_STYLEA(0,"ShowBarText",0);
+            LODOP.SET_PRINT_STYLEA(0,"GroundColor","#FFFFFF");
+            LODOP.ADD_PRINT_TEXTA("fdispatchOrderNo","34.5mm","1.85mm","74.08mm","6.61mm","");
+            LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+            LODOP.SET_PRINT_STYLEA(0,"FontSize",20);
+            LODOP.SET_PRINT_STYLEA(0,"Alignment",2);
+            LODOP.SET_PRINT_STYLEA(0,"Bold",1);
+            LODOP.SET_PRINT_STYLEA(0,"Horient",2);
+        }
+        //		//生成模板
+        function getProgramData() {
+            LODOP=getLodop();
+            if (LODOP.CVERSION) LODOP.On_Return=function(TaskID,Value){
+                document.getElementById('S1').value=Value;
+            };
+            document.getElementById('S1').value=LODOP.GET_VALUE("ProgramData",0);	//获得文档式模板
+
+        };
+        //加载模板
+        function DesignByPRGData() {
+            LODOP=getLodop();
+            LODOP.ADD_PRINT_DATA("ProgramData",document.getElementById('S1').value); //装载模板
+//			var aa="@J0yHEH1QG1IBIS0APyMOGSISCGDAPt0XJ1OFGyECHS0APxyHEH1DLJ5yoSODIRj9ZN0XFIESGGR9At0XFIESGGV9AQxAPxyHEH0mCGp0QDcWIRIAAQ0kZmNAPt0XJ1OFGxkSEyEqQDcWIRIAHTShMJkDHSEZCGNAPxyHEH0kCGLAPxyHEH0lCGpAPxyHEH0mCGZjQDcWIRIAAQ03QDbAPygDHx5KFHEHFS0APxyHEH1DLJ5yoSODIRj9BQNjQDcWIRIAZG0lBQNAPxyHEH0lCGV4ZN0XFIESGGZ9ZwDlQDcWIRIAAQ0lBQNAPt0XJ1OFGxuSFHqVIS0APxyHEH1DLJ5yoSODIRj9AwNjQDcWIRIAZG0mBN0XFIESGGV9ZGHAPxyHEH0mCGHkQDcWIRIAAQ0lAD0XQDconT9lnJIhqS0APxyHEH0kCGVAPxyHEH0lCGVAPxyHEH00CGVAPt0XJ2MioaEmnKcyKD0XFIESGGR9ZwDAPxyHEH0lCGRmYwHAPxyHEH00CGVjQDbAPygzo250ozSgMI0APxyHEH0kCoenmBHAPxyHEH0lCoenmBHAPxyHEH0mCGRlBRVAPxyHEH00CoenmBHAPt0XJ2WioTEqQDcWIRIAZG0kQDcWIRIAZw0kQDcWIRIAAQ0kQDbAPyguoTyaoz1yoaEqQDcWIRIAZG0lQDcWIRIAZw0lQDcWIRIAAQ0lQDbAPygQGRSGH0yBERILKD0XFIESGGR9Zt0XFIESGGV9Zt0XFIESGGZ9BD0XFIESGGD9Zt0XQDcoD29hqTIhqS0APxyHEH1DLJ5yoSODIRj9AKNlnQH2D0V1pyqZAxfeIt0XFIESGGR9AHk1ZwIjI3p3A3yuGJp9CD0XFIESGGV9AHkcFmIlImAZHmAgoQMLoJ5Yqm0APxyHEH0mCH5HIGRAPxyHEH00CH1dFKyAnxy5GJcWCD0XQDconKEyoJ5uoJIqQDcWIRIAZG1xnKAao29xp3A1oD0XFIESGGV9MaAyozEFMJAynKMyGzSgMD0XFIESGGD9MzEcp3OuqTAbG3WxMKWBoj0XQDcop2uiq2WupaEyrUEqQDcWIRIAZm0jQDbAPygapz91ozEwo2kipy0APxyHEH0mCFATExMTExLAPt0XJ1A0rJkyGzSgMKAmKD0XFIESGGR9nT9lnJIhqQgcqTIgozSgMGgzo250p2y6MGgzo250ozSgMGgvo2kxB2SfnJqhoJIhqQfAPxyHEH0lCJuipzyyoaD7nKEyoJ5uoJH7Mz9hqUAcrzH7Mz9hqT5uoJH7Lz9fMQguoTyaoz1yoaD7QDcWIRIAZm1mnT93LzSlqTI4qQgapz91ozEwo2kipwfAPxyHEH00CJuipzyyoaD7nKEyoJ5uoJH7Mz9hqUAcrzH7Mz9hqT5uoJH7Lz9fMQguoTyaoz1yoaD7QDcoFIESGHIBES0APt==";
+//
+//		LODOP.ADD_PRINT_DATA("ProgramData",aa); //装载模板
+            //按类名赋值
+
+            LODOP.SET_PRINT_STYLEA("t_fhr","CONTENT","nihao");
+            LODOP.SET_PRINT_STYLEA("t_shr","CONTENT","fahuoren");
+            LODOP.SET_PRINT_STYLEA("t_shrdh","CONTENT","12672163721");
+            LODOP.SET_SHOW_MODE("DESIGN_IN_BROWSE",1);
+            LODOP.PRINT_DESIGN();
+        };
+        //打印预览
+        function PreviewByPRGData() {
+            LODOP=getLodop();
+            LODOP.ADD_PRINT_DATA("ProgramData",document.getElementById('S1').value); //装载模板
+            //按类名赋值
+            LODOP.PREVIEW();
+        };
+
+    </script>
+
+
+</head>
+<body>
+<br>
+<p><a href="javascript:DisplayDesign()">打印设计</a></p>
+<p><a href="javascript:getProgramData()">生成模板</a></p>
+<textarea rows="10" id="S1" cols="98" >返回的结果值</textarea><br>
+<p><a href="javascript:DesignByPRGData()">加载模板</a></p>
+<p><a href="javascript:PreviewByPRGData()">打印预览</a></p>
+
+
+
+</body>
+</html>

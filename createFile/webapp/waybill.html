@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="app">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title id="webtitle" >运单追踪</title>
+<link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet">
+<link href='/assets/stylesheets/bootstrap/bootstrap-responsive.css' media='all' rel='stylesheet' type='text/css' />
+<link href='/assets/stylesheets/jquery_ui/jquery-ui-1.10.0.custom.css' media='all' rel='stylesheet' type='text/css' />
+<link href="/assets/stylesheets/style.min.css" rel="stylesheet">
+<link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet">
+<link href="/assets/stylesheets/sweetalert2.min.css" rel="stylesheet">
+<link href='/assets/stylesheets/light-theme.css' id='color-settings-body-color' media='all' rel='stylesheet' type='text/css' />
+<link href="/assets/stylesheets/dqq.css" rel="stylesheet">
+<script src="/assets/javascripts/jquery/jquery.min.js"></script>
+<script src="/assets/javascripts/sweetalert2.min.js"></script>
+<script src="/assets/javascripts/dqq_include.js" type="text/javascript"></script>
+<script src="/assets/javascripts/api/login.js"></script>
+<script src="/assets/javascripts/dqq_function.js"></script>
+<script src="/assets/javascripts/move-top.js"></script>
+<script src="/assets/javascripts/index.properties.js"></script>
+<script>
+	var _page="waybill";
+    var _waybillrandom=0;
+</script>
+
+</head>
+<body onload="setWebinfo();setlogo();">
+	<div class="hgroup2">&nbsp;</div>
+	<div class="warp logo_lxwm2">
+		<div class="logo"><a href="#">&nbsp;</a></div>
+		<div class="lxwm_box">
+			<div class="lxwm_icon">
+				<ul>
+				<li><a href="/" target="_blank"><i class="icon iconfont">&#xe80e;</i> <span id="logo_info">物流</span></a></li>
+				<li><a href="javascript:void(0);"><i class="icon iconfont ">&#xe72c;</i> 常见问题</a></li>
+				<li><a href="javascript:void(0);"><i class="icon iconfont">&#xe947;</i> 使用帮助</a></li>
+
+				</ul>
+			</div>
+			<div class="lxwm">
+				<p><span>客户热线</span><b id="khrx" ></b></p>
+				<p><span>业务热线</span><b id="ywrx" ></b></p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="wrapper-content" style="padding:0 20px;">
+		<section>
+			<div class='page-header'>
+				<h1 align="center">运单追踪</h1>
+			</div>
+			<div class="row-fluid" style="width:90%;margin:0 auto;">
+				<div class='span4 box bordered-box green-border'>
+					<div class='box-header green-background'>
+						<div class='title'>请输入单号</div>
+					</div>
+					<div class='box-content'>
+						<form class="form validate-form" action="" onsubmit="return false;">
+							<div class='row-fluid'>
+								<div class='control-group'>
+									<label class='control-label' for="fdispatchOrderNo">运单号码</label>
+									<div class='controls'>
+										<input class='span12' id='fdispatchOrderNo' name="fdispatchOrderNo" type='text' placeholder="请输入运单号码" title="请填写运单号码" data-rule-required='true' onblur="setYzmQuery();" />
+									</div>
+								</div>
+							</div>
+							<div class='row-fluid'>
+								<div class='control-group'>
+									<div class='span8'>
+										<label class='control-label' for="fyzm">验证码</label>
+										<div class='controls'>
+											<input class='span12' id='fyzm' name="fyzm" type='text' placeholder="请输入验证码" title="请填写验证码" data-rule-required='true' />
+										</div>
+									</div>
+									<div class='span4'>
+										<div class='controls' >
+											<div id='YzmQuery_code'  style='margin-top:25px;'   >
+												验证码
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='row-fluid'>
+								<div class='span4'>
+									<button class="btn btn-warning span12 d_submit">查询</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="span8 box">
+					<div class='row-fluid'>
+						<div class="box-header blue-background">
+							<div class="title">运单动态</div>
+						</div>
+						<div class="box-content" id="dispatchOrderMoveInfo" style="min-height:198px;">
+							<table class='dongtai' cellspacing="0" width="100%">
+								<tbody></tbody>
+							</table>
+						</div>
+					</div>
+
+					<div class='row-fluid' id="dsklz" style="display:none;">
+						<div class="box-header orange-background">
+							<div class="title">代收款流转</div>
+						</div>
+						<div class="box-content" id="dispatchCodInfo" style="min-height:198px;">
+							<table class='dongtai' cellspacing="0" width="100%">
+								<tbody></tbody>
+							</table>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+	</div>
+	<div class="foot_box2"></div>
+</body>
+</html>
+<script>
+    function setlogo(){
+        $(".logo_lxwm2").css('left','10%');
+        $(".logo_lxwm2").css('margin-left','0px');
+        if(IsPC()&&IsPC()){
+            $(".logo_lxwm2").css('left','50%');
+            $(".logo_lxwm2").css('margin-left','-512px');
+        }
+	}
+</script>
+

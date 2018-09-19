@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+	<title id="webtitle" >系统</title>
+    <!--[if lt IE 9]>
+    <script src='/assets/javascripts/html5shiv.js' type='text/javascript'></script>
+    <![endif]-->
+    <link href='/assets/stylesheets/bootstrap/bootstrap.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='/assets/stylesheets/bootstrap/bootstrap-responsive.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='/assets/stylesheets/jquery_ui/jquery-ui-1.10.0.custom.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='/assets/stylesheets/jquery_ui/jquery.ui.1.10.0.ie.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='/assets/stylesheets/light-theme.css' id='color-settings-body-color' media='all' rel='stylesheet' type='text/css' />
+    <link href="/assets/stylesheets/font-awesome.min.css?v=4.3.0" rel="stylesheet">
+    <link href="/assets/stylesheets/sweetalert2.min.css" rel="stylesheet">
+    <link href="/assets/stylesheets/dqq.css" rel="stylesheet">
+	<style>body,html{overflow:hidden;}</style>
+	<script>
+		var _page="main";
+	</script>
+</head>
+<body class='contrast-blue' onload="setWebinfo();">
+	<header>
+		<div class='navbar'>
+			<div class='navbar-inner'>
+				<a class='brand' href='/main.html'><i class="logo">&nbsp;</i><span id="webtitle2">系统</span><i class="line">&nbsp;</i></a>
+				<a class="toggle-nav btn pull-left navbar-mini" href="javascript:void(0)">
+                    <i class="icon iconfont">&#xe84c;</i>
+                </a>
+				<div class="slide_gg">
+					<b><i class="icon iconfont">&#xe9dd;</i></b>
+					<div id="scroll_slide"></div>
+					<div class='span3'>
+						<input type="hidden" id="mainfindfdispatchOrderInfo_hide">
+						<input class='span2' id="mainfindfdispatchOrderInfo" type='text' placeholder="请输入运单号" title="请输入运单号" data-rule-required='true' style="padding: 0px 6px 0px 6px;" />&nbsp;&nbsp;<button class="btn btn-warning" style="padding: 0px 6px 3px 6px;margin-top:-8px;font-size: 16px;line-height: 28px;" onclick="mainShowfdispatchOrderInfo();">单号查询</button>
+					</div>
+					<div class="span2">
+						<button class="btn btn-success  " style="padding: 0px 6px 3px 6px;margin-top:0;font-size: 16px;" onclick="closeAllPage()">关闭全部页面</button>
+					</div>
+				</div>
+				<div class="nav_right">
+					<ul class='nav pull-right'>
+						<li class='only-icon light'><a class="J_menuItem" href='/tpl/welcome.html' date-title="系统桌面" data-index="0"><i class='icon iconfont'>&#xe855;</i> <span>系统桌面</span></a></li>
+						<li class='dropdown only-icon light'>
+							<a class='dropdown-toggle' data-toggle='dropdown' href='javascript:void(0)'><i class='icon iconfont'>&#xe88f;</i> <span>皮肤设置</span></a>
+							<ul class='dropdown-menu color-settings'>
+								<li class='color-settings-body-color'>
+									<div class='color-title'>皮肤设置</div>
+								</li>
+								<li class='divider'></li>
+								<li class='color-settings-contrast-color'>
+									<a href="javascript:void(0)" data-change-to="contrast-blue"><i class='icon iconfont text-blue'>&#xe9ff;</i> 蓝色<small>默认</small></a>
+									<a href="javascript:void(0)" data-change-to="contrast-red"><i class='icon iconfont text-red'>&#xe9ff;</i> 红色</a>
+									<a href="javascript:void(0)" data-change-to="contrast-orange"><i class='icon iconfont text-orange'>&#xe9ff;</i> 橙色</a>
+									<a href="javascript:void(0)" data-change-to="contrast-purple"><i class='icon iconfont text-purple'>&#xe9ff;</i> 紫色</a>
+									<a href="javascript:void(0)" data-change-to="contrast-green"><i class='icon iconfont text-green'>&#xe9ff;</i> 绿色</a>
+									<a href="javascript:void(0)" data-change-to="contrast-muted"><i class='icon iconfont text-muted'>&#xe9ff;</i> 灰色</a>
+									<a href="javascript:void(0)" data-change-to="contrast-fb"><i class='icon iconfont text-fb'>&#xe9ff;</i> 深蓝</a>
+									<a href="javascript:void(0)" data-change-to="contrast-dark"><i class='icon iconfont text-dark'>&#xe9ff;</i> 黑色</a>
+									<a href="javascript:void(0)" data-change-to="contrast-pink"><i class='icon iconfont text-pink'>&#xe9ff;</i> 粉红</a>
+									<a href="javascript:void(0)" data-change-to="contrast-grass-green"><i class='icon iconfont text-grass-green'>&#xe9ff;</i> 草绿色</a>
+									<a href="javascript:void(0)" data-change-to="contrast-sea-blue"><i class='icon iconfont text-sea-blue'>&#xe9ff;</i> 海之蓝</a>
+									<a href="javascript:void(0)" data-change-to="contrast-banana"><i class='icon iconfont text-banana'>&#xe9ff;</i> 黄色</a>
+									<a href="javascript:void(0)" data-change-to="contrast-dark-orange"><i class='icon iconfont text-dark-orange'>&#xe9ff;</i> 深橙色</a>
+									<a href="javascript:void(0)" data-change-to="contrast-brown"><i class='icon iconfont text-brown'>&#xe9ff;</i> 酒红色</a>
+								</li>
+							</ul>
+						</li>
+						<li class='only-icon light'><a class="J_menuItem" href='/tpl/process.html' date-title="流程视图" data-index="1"><i class='icon iconfont'>&#xe9a4;</i> <span>流程视图</span></a></li>
+						<li class="dropdown medium only-icon widget">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+								<div class="label" id="ToDoNum">0</div>
+							</a>
+							<ul class="dropdown-menu" id="ToDoList"><div class='noTodo'>暂无任务</div></ul>
+						</li>
+						<li class="dropdown dark user-menu">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="javascriopt:void(0)">
+								<img height="23" src="assets/images/avatar.jpg" width="23" id="main_user_avatar">
+								<span class="user-name hidden-phone" id="main_user_name"></span>
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a class="J_menuItem" id="personalData" onclick="return personalDataFun()" href="javascriopt:void(0)" date-title="个人信息修改" data-index="2">
+										<i class='icon iconfont'>&#xe60c;</i>
+										个人资料
+									</a>
+								</li>
+								<li>
+									<a class="J_menuItem" id="changePwd" onclick="return changePwdFun()" href="javascriopt:void(0)" date-title="修改密码" data-index="3">
+										<i class='icon iconfont'>&#xe82b;</i>
+										修改密码
+									</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="javascript:void(0);" class="logout">
+										<i class='icon iconfont'>&#xe797;</i>
+										退出系统
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</header>
+	<div id='wrapper'>
+		<nav id='main-nav'>
+			<div class='navigation'>
+				<a href="javascript:void(0)" class="dropdown-collapse menu_title in">
+					<b class="caret"></b>
+					<span class="nav-label"> 产品与服务</span>
+				</a>
+				<ul class='nav nav-stacked nav_menus'></ul>
+			</div>
+		</nav>
+		<section id='content'>
+			<div class="content-tabs">
+				<button class="roll-nav roll-left J_tabLeft"><b class="caret"></b></button>
+				<nav class="page-tabs J_menuTabs">
+					<div class="page-tabs-content">
+						<a href="javascript:void(0);" class="active J_menuTab" data-id="/tpl/welcome.html">首页</a>
+					</div>
+				</nav>
+				<button class="roll-nav roll-right J_tabRight"><b class="caret"></b></button>
+			</div>
+			<div class="J_mainContent" id="content-main">
+				<iframe id="J_iframe" name="iframe0" class="J_iframe" width="100%" height="100%" src="" frameborder="0" data-id=""></iframe>
+			</div>
+		</section>
+	</div>
+
+	<div class='modal hide fade' id='modal-loading' role='dialog' tabindex='-1'>
+		<div class='modal-header'>
+			<button class='close' data-dismiss='modal' type='button'>&times;</button>
+			<h3>提示</h3>
+		</div>
+		<div class='modal-body'><div class="loading_01">数据提交中，请稍等</div></div>
+	</div>
+
+	<div class="hidden">
+		<form id="export_form" method="post" action="" target="_blank">
+			<input type="hidden" id="packet_check" name="packet_check" />
+			<input type="hidden" id="packet_token" name="packet_token" />
+			<input type="hidden" id="action_msg" name="msg" />
+		</form>
+	</div>
+	<audio id="warningTone"></audio>
+	<div id="loading">
+		<div class="imgLoading">
+			<img src="/assets/images/loading_06.gif" alt="" style="margin-bottom: 200px">
+			<button class="btn btn-danger btn-block closeModal">关闭</button>
+		</div>
+	</div>
+
+	<script src='/assets/javascripts/jquery/jquery.min.js' type='text/javascript'></script>
+	<script src='/assets/javascripts/bootstrap/bootstrap.min.js' type='text/javascript'></script>
+	<script src='/assets/javascripts/plugins/mobile_events/jquery.mobile-events.min.js' type='text/javascript'></script>
+	<script src='/assets/javascripts/sweetalert2.min.js' type='text/javascript'></script>
+	<!--<script src="/assets/javascripts/promise.min.js"></script>-->
+	<script src='/assets/javascripts/nav.js' type='text/javascript'></script>
+	<script src="/assets/javascripts/plugins/layer/layer.min.js"></script>
+	<script src="/assets/javascripts/contabs.min.js" type="text/javascript"></script>
+	<script src="/assets/javascripts/jquery.timers-1.2.js" type="text/javascript"></script>
+	<script src="/assets/javascripts/dqq_include.js" type="text/javascript"></script>
+	<script src="/assets/javascripts/dqq_function.js" type="text/javascript"></script>
+	<script src="/assets/javascripts/index.properties.js"></script>
+	<script src="/assets/javascripts/api/main.js" type="text/javascript"></script>
+	<script src="/assets/javascripts/dqq_page_public.js"></script>
+<script>
+</script>
+</body>
+</html>

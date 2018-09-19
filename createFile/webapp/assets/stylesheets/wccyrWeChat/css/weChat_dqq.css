@@ -1,0 +1,83 @@
+.hide{
+    display: none;
+}
+.fr{
+   float: right;
+}
+.fl{
+    float: left;
+}
+.text-right{
+    text-align: right!important;
+}
+.text-center{
+    text-align: center!important;;
+}
+.text-left{
+    text-align: left!important;;
+}
+.w10{width:10%;}
+.w20{width:20%;}
+.w30{width:30%;}
+.w40{width:40%;}
+.w50{width:50%;}
+.w60{width:60%;}
+.w70{width:70%;}
+.w80{width:80%;}
+.w90{width:90%;}
+.w100{width:100%;}
+.h100{height:100%;}
+/*图片上传部分样式*/
+.uploadImg ul,li{
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+.uploadImg ul{
+    width:100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: .5rem;
+}
+.uploadImg li{
+    text-align: center;
+}
+.uploadImg li>div:not(.hide){
+    display: inline-block;
+    position: relative;
+}
+.validate-required::before{
+    content: '*';
+    color: red;
+    font-size: 50%;
+}
+.weui-cells_form{
+    margin-top: 0;
+}
+.showActive{
+    display: block!important;
+}.showActive-ib{
+    display: inline-block!important;
+}
+/*error 获取用户信息失败遮罩层*/
+.errorInfo-model{
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background: rgba(0,0,0,.5);
+    z-index: 20;
+}
+li[imgnum]>div.weui-uploader__input-box,li[imgnum]>div.weui-uploader__file{
+    float: none;
+}
+.wxBottomBtn{
+    position: fixed;
+    left: 0;
+    right:0;
+    bottom: 0;
+}
+.weui-btn_plain-default{
+    background: #fff;
+}
