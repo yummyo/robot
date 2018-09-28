@@ -1,8 +1,17 @@
 // 组合排列查询条件 将需要的查询条件用常量的方式写到下边，然后在option中对他们进行分组
 
 //input组件 textName为label名称
-const tree_input = `<input class='span12' id='tree_01_name' name="tree_01_name" type='text' placeholder="全部" textName="统计网点" title="请选择统计网点"/>`;
-const car_input = `<input class='span12' id='fplantNo' name="fplantNo" type='text' placeholder="请输入车牌号" textName="车牌号" title="请输入车牌号"/>`;
+const tree_input_1 = `<input class='span12' id='tree_01_name' name="tree_01_name" type='text' placeholder="全部" textName="统计网点" title="请选择统计网点"/>`;
+const tree_input_2 = `<input class='span12' id='tree_02_name' name="tree_02_name" type='text' placeholder="全部" textName="发货网点" title="请选择发货网点"/>`;
+const tree_input_3 = `<input class='span12' id='tree_03_name' name="tree_03_name" type='text' placeholder="全部" textName="到货网点" title="请选择到货网点"/>`;
+
+const select2_1 = `<select class='span12 select2' id='fdispatchOrderType' name="fdispatchOrderType" type='text' placeholder="全部" textName="运单类型" title="请选择运单类型" ></select>`;
+const select2_2 = `<select class='span12 select2' id='fcodStatus' name="fcodStatus" type='text' placeholder="全部" textName="结算状态" title="请选择结算状态" ></select>`;
+const select2_3 = `<select class='span12 select2' id='fbankType' name="fbankType" type='text' placeholder="全部" textName="结算银行" title="请选择结算银行" ></select>`;
+
+const input_1 = `<input class='span12' id='fplantNo' name="fplantNo" type='text' placeholder="请输入车牌号" textName="车牌号" title="请输入车牌号"/>`;
+const input_2 = `<input class='span12' id='fsenderName' name="fsenderName" type='text' placeholder="请输入收款人姓名" textName="收款人姓名" title="请输入收款人姓名"/>`;
+
 const startDate_input = `<input type="text" class="span12 ly_date" id="fstartDate" name="fstartDate" placeholder="请输入开始时间"  textName="开始时间" title="请输入开始时间"  readonly/>`;
 const endDate_input = `<input type="text" class="span12 ly_date" id="fendDate" name="fendDate" placeholder="请输入结束时间" textName="结束时间" title="请输入结束时间"  readonly/>`;
 
@@ -11,9 +20,8 @@ const searchBtn = `<button class="btn btn-warning d_search " textName="&nbsp;" i
 
 //组合input模块
 let option = {
-    'type_1' : [tree_input,startDate_input,endDate_input,searchBtn],
-    'type_2' : [car_input,startDate_input,endDate_input,searchBtn],
-    'type_3' : [tree_input,startDate_input,searchBtn],
+    // 银行转账结算查询
+    'type_1' : [tree_input_2,tree_input_3,select2_1,input_2,select2_2,select2_3,startDate_input,endDate_input]
 }
 class joinHeader{
     constructor(){

@@ -6,19 +6,31 @@ const fs = require('fs'),
        // 模板路径
         readPath = 'createFile/',
        //html存放路径
-        writePath_html = `createFile/webapp/tpl/${PageOption.pageName}.html`,
+        // writePath_html = `createFile/webapp/tpl/${PageOption.pageName}.html`,
+        writePath_html = function(){
+            if(process.argv[2] && process.argv[2].indexOf('.html') > -1){
+                return process.argv[2]
+            }else{
+                return PageOption.pageName+".html"
+            }
+        },
        //html存放路径
-        writePath_js = `createFile/webapp/assets/javascripts/api/${PageOption.pageName}.js` ;
+        // writePath_js = `createFile/webapp/assets/javascripts/api/${PageOption.pageName}.js` ;
+        writePath_js =  function(){
+            if(process.argv[2] && process.argv[2].indexOf('.js') > -1){
+                return process.argv[3];
+            }else{
+                return PageOption.pageName+".html";
+            }
+        }
 
-      createHtml();
-      createJs();
-
+    //   createHtml();
+    //   createJs();
 
 
 
 function createHtml(){
     let searchHtml = getHeader(PageOption['search_type']),
-   
    
     //正则替换列表 JSON 格式
     regList = {
